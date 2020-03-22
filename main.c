@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
     // use a standard implementation of a sha256 hmac
     hmac_sha256(key,0x20,uniqdata,strlen(uniqdata),result);
 
-    printf("https://gs-sec.ww.np.dl.playstation.net/pl/np/%s/", title);
+    printf("http://gs-sec.ww.np.dl.playstation.net/pl/np/%s/", title);
     for(i=0;i<0x20;i++) {
        printf("%02x", result[i]);
     }
