@@ -41,7 +41,10 @@ int main(int argc, char* argv[]) {
     if (interactive == 1) {
         printf("Enter title id name (PCSA00000):"); scanf("%s", title);
     }
-
+    if (strlen(title) != 9) {
+        printf("Invalid title ID: %s\n", title);
+        return 1;
+    }
     sprintf(uniqdata,"np_%s", title );
     // use a standard implementation of a sha256 hmac
     hmac_sha256(key,0x20,uniqdata,strlen(uniqdata),result);
